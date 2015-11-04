@@ -19,7 +19,6 @@ app.on('ready', function(){
     tray.setToolTip('QConnector');
     tray.setContextMenu(contextMenu);
 
-
-    var main_window = new BrowserWindow({show: true, icon: tray_icon_path, frame: false});
+    var main_window = new BrowserWindow({'accept-first-mouse': true, 'min-width': 500, 'min-height': 200, icon: tray_icon_path, 'title-bar-style': 'hidden'});
     main_window.loadUrl(`file://${__dirname}/index.html`);
 });
